@@ -1,5 +1,5 @@
 function calculateTip() {
-    // Clear previous error messages
+    // Clear any previous error messages
     document.getElementById('billAmountError').innerText = '';
     document.getElementById('customTipError').innerText = '';
     document.getElementById('splitByError').innerText = '';
