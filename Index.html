@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tip Calculator</h1>
+        <div class="calculator">
+            <label for="billAmount">Bill Amount ($):</label>
+            <input type="number" id="billAmount" placeholder="Enter bill amount" step="0.01" min="0" oninput="calculateTip()">
+            <p id="billAmountError" class="error-message"></p>
+
+            <label for="tipPercentage">Tip Percentage (%):</label>
+            <select id="tipPercentage" onchange="calculateTip()">
+                <option value="0.10">10%</option>
+                <option value="0.15">15%</option>
+                <option value="0.20">20%</option>
+                <option value="0.25">25%</option>
+                <option value="0.30">30%</option>
+                <option value="custom">Custom</option>
+            </select>
+
+            <div id="customTipContainer" style="display: none;">
+                <label for="customTip">Custom Tip (%):</label>
+                <input type="number" id="customTip" placeholder="Enter custom tip percentage" step="0.01" min="0" oninput="calculateTip()">
+                <p id="customTipError" class="error-message"></p>
+            </div>
+
+            <label for="splitBy">Split By (number of people):</label>
+            <input type="number" id="splitBy" placeholder="1" min="1" value="1" oninput="calculateTip()">
+            <p id="splitByError" class="error-message"></p>
+
+            <div class="results">
+                <p>Tip Amount: $<span id="tipAmount">0.00</span></p>
+                <p>Total Amount: $<span id="totalAmount">0.00</span></p>
+                <p>Amount Per Person: $<span id="amountPerPerson">0.00</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
