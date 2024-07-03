@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinkgeldrechner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Trinkgeldrechner</h1>
+        <div class="calculator">
+            <label for="billAmount">Rechnung in (CHF):</label>
+            <input type="number" id="billAmount" placeholder="Gib den Betrag an" step="0.01" min="0" oninput="calculateTip()">
+            <p id="billAmountError" class="error-message"></p>
+
+            <label for="tipPercentage">Trinkgeld in (%):</label>
+            <select id="tipPercentage" onchange="calculateTip()">
+                <option value="0.10">10%</option>
+                <option value="0.15">15%</option>
+                <option value="0.20">20%</option>
+                <option value="0.25">25%</option>
+                <option value="0.30">30%</option>
+                <option value="custom">Eigene</option>
+            </select>
+
+            <div id="customTipContainer" style="display: none;">
+                <label for="customTip">Eigene (%):</label>
+                <input type="number" id="customTip" placeholder="Gib eigene Prozentzahl an" step="0.01" min="0" oninput="calculateTip()">
+                <p id="customTipError" class="error-message"></p>
+            </div>
+
+            <label for="splitBy">Geteilt durch (Anzahl Personen):</label>
+            <input type="number" id="splitBy" placeholder="1" min="1" value="1" oninput="calculateTip()">
+            <p id="splitByError" class="error-message"></p>
+
+            <div class="results">
+                <p>Trinkgeld: CHF <span id="tipAmount">0.00</span></p>
+                <p>Betrag inklusive Trinkgeld: CHF <span id="totalAmount">0.00</span></p>
+                <p>Betrag pro Person: CHF <span id="amountPerPerson">0.00</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
