@@ -22,17 +22,17 @@ function calculateTip() {
     let valid = true; // Überprüt auf Errors und würde dann Fehlermeldung geben
 
     if (isNaN(billAmount) || billAmount <= 0) {
-        document.getElementById('billAmountError').innerText = 'Please enter a valid bill amount'; // Wenn rechnung = 0 ist, kommt Fehlermeldung
+        document.getElementById('billAmountError').innerText = 'Gib einen gültigen betrag ein'; // Wenn rechnung = 0 ist, kommt Fehlermeldung
         valid = false;
     }
 
     if (tipPercentage === 'custom' && (isNaN(tipPercentage) || tipPercentage < 0)) {
-        document.getElementById('customTipError').innerText = 'Please enter a valid tip percentage'; // Wenn Trinkgeld = 0 ist kommt Fehlermeldung
+        document.getElementById('customTipError').innerText = 'Gib einen gültigen Betrag ein'; // Wenn Trinkgeld = 0 ist kommt Fehlermeldung
         valid = false;
     }
 
     if (isNaN(numberOfPeople) || numberOfPeople <= 0) {
-        document.getElementById('splitByError').innerText = 'Please enter a valid number of people'; // Wenn Menschen = 0 sind kommt Fehlermeldung
+        document.getElementById('splitByError').innerText = 'Gib einen gültigen Betrag ein'; // Wenn Menschen = 0 sind kommt Fehlermeldung
         valid = false;
     }
 
